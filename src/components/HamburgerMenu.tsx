@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
-// import ResponsiveMenu from "../components/ResponsiveMenu";
+import ResponsiveMenu from "./ResponsiveMenu";
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -17,8 +17,7 @@ export default function HamburgerMenu() {
           <Menu className="text-[#ffffff]" />
         )}
       </button>
-
-      {/* <ResponsiveMenu isOpen={isOpen} /> */}
+      <ResponsiveMenu isOpen={isOpen} />
     </div>
   );
 }
