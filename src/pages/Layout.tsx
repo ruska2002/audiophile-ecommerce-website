@@ -1,13 +1,17 @@
 import Category from "../components/Category";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
-import MiddlePart from "../components/MiddlePart.tsx";
+import Info from "../components/Info";
+import MiddlePart from "../components/MiddlePart";
 
 export default function Layout() {
   return (
-    <div>
+    <>
       <Header />
       <Category />
       <MiddlePart />
-    </div>
+      <Info />
+      <Footer />
+    </>
   );
 }

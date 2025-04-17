@@ -8,3 +8,7 @@ interface Product {
     desktop: string;
   };
 }
+
+interface ResponsiveMenuProps {
+  isOpen: boolean;
+}

@@ -24,7 +24,7 @@ const categories = [
 
 export default function Category() {
   return (
-    <div className="flex flex-col md:flex-row gap-16 md:gap-6 lg:gap-8 md:h-[300px] md:justify-center md:items-center lg:mt-20">
+    <div className="flex flex-col md:flex-row gap-16 md:gap-6 lg:gap-8 md:h-[300px] md:justify-center md:items-center  lg:mt-20">
       {categories.map((cat) => (
         <div
           key={cat.name}

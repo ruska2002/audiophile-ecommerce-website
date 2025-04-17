@@ -1,10 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Category from "./Category";
 
-interface ResponsiveMenuProps {
-  isOpen: boolean;
-}
-
 export default function ResponsiveMenu({ isOpen }: ResponsiveMenuProps) {
   return (
     <AnimatePresence>
