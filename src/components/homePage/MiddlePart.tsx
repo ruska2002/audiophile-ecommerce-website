@@ -1,13 +1,13 @@
-import earphones from "../assets/home/desktop/image-earphones-yx1.jpg";
-import earphonesMedium from "../assets/home/tablet/image-earphones-yx1.jpg";
-import earphonesMini from "../assets/home/mobile/image-earphones-yx1.jpg";
-import speaker from "../assets/home/desktop/image-speaker-zx7.jpg";
-import speakerMini from "../assets/home/mobile/image-speaker-zx7.jpg";
-import speakerMedium from "../assets/home/tablet/image-speaker-zx7.jpg";
-import Mainspeaker from "../assets/home/desktop/image-speaker-zx9.png";
-import MainspeakerMini from "../assets/home/mobile/image-speaker-zx9.png";
-import MainspeakerMedium from "../assets/home/tablet/image-speaker-zx9.png";
-import PatternSircle from "../assets/home/desktop/pattern-circles.svg";
+import earphones from "../../assets/home/desktop/image-earphones-yx1.jpg";
+import earphonesMedium from "../../assets/home/tablet/image-earphones-yx1.jpg";
+import earphonesMini from "../../assets/home/mobile/image-earphones-yx1.jpg";
+import speaker from "../../assets/home/desktop/image-speaker-zx7.jpg";
+import speakerMini from "../../assets/home/mobile/image-speaker-zx7.jpg";
+import speakerMedium from "../../assets/home/tablet/image-speaker-zx7.jpg";
+import Mainspeaker from "../../assets/home/desktop/image-speaker-zx9.png";
+import MainspeakerMini from "../../assets/home/mobile/image-speaker-zx9.png";
+import MainspeakerMedium from "../../assets/home/tablet/image-speaker-zx9.png";
+import PatternSircle from "../../assets/home/desktop/pattern-circles.svg";
 import { useMediaQuery } from "usehooks-ts";
 
 export default function MiddlePart() {

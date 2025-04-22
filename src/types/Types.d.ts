@@ -7,8 +7,14 @@ interface Product {
     tablet: string;
     desktop: string;
   };
+
+  image: { mobile: string; tablet: string; desktop: string };
 }
 
 interface ResponsiveMenuProps {
   isOpen: boolean;
+}
+
+interface CategoryPageProps {
+  categoryName?: string;
 }
