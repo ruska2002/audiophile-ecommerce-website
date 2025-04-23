@@ -7,7 +7,8 @@ interface Product {
     tablet: string;
     desktop: string;
   };
-
+  description: string;
+  feature: string;
   image: { mobile: string; tablet: string; desktop: string };
 }
 
@@ -17,4 +18,9 @@ interface ResponsiveMenuProps {
 
 interface CategoryPageProps {
   categoryName?: string;
+}
+interface ImageSet {
+  desktop: string;
+  tablet: string;
+  mobile: string;
 }

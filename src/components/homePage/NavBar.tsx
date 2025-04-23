@@ -10,7 +10,10 @@ export default function NavBar() {
             const path = name === "HOME" ? "/" : `/${name.toLowerCase()}`;
             return (
               <li key={index}>
-                <Link to={path} className="text-white hover:text-[#D87D4A]">
+                <Link
+                  to={path}
+                  className="text-white hover:text-[#D87D4A] uppercase"
+                >
                   {name}
                 </Link>
               </li>

@@ -1,7 +1,9 @@
 import data from "../../../data.json";
 import { useParams } from "react-router-dom";
-import TopBar from "../homePage/TopBar";
 import { useMediaQuery } from "usehooks-ts";
+import Category from "../homePage/Category";
+import Info from "../homePage/Info";
+import { Link } from "react-router-dom";
 
 export default function CategoryPage() {
   const { categoryName } = useParams<{ categoryName: string }>();
@@ -14,14 +16,12 @@ export default function CategoryPage() {
 
   return (
     <div>
-      <div className="bg-black text-white">
-        <TopBar />
+      <div className="bg-[#1f1f1f] text-white">
         <div className="py-[6.5rem]">
           <h1 className="text-3xl text-center uppercase">{categoryName}</h1>
         </div>
       </div>
-
-      <div className="flex">
+      <div className="flex flex-col lg:gap-40 gap-30 lg:mt-40 md:mt-30 mt-16 items-center">
         {filteredProducts.map((product, index) => {
           const imageUrl = isDesktop
             ? product.categoryImage.desktop
@@ -32,18 +32,37 @@ export default function CategoryPage() {
           return (
             <div
               key={product.id}
-              className={`flex flex-col md:flex-row items-center gap-10 ${
-                index % 2 !== 0 ? "md:flex-row-reverse" : ""
+              className={`flex flex-col md:flex-col lg:flex-row items-center gap-8 md:gap-13 lg:gap-32  lg:w-[69.3rem] ${
+                index % 2 !== 0 ? "lg:flex-row-reverse" : ""
               }`}
             >
-              <img src={imageUrl} alt={product.name} className="w-full" />
-              <div className="text-center md:text-left">
-                <h2 className="text-2xl font-bold mb-4">{product.name}</h2>
+              <img
+                src={imageUrl}
+                alt={product.name}
+                className="w-[20.4rem] h-[20.4rem] md:h-[22rem] md:w-[43rem] lg:h-[35rem] lg:w-[33.7rem] rounded-lg"
+              />
+              <div className="text-center lg:text-left w-[327px] md:w-[572px] lg:w-[445px]">
+                {product.new && (
+                  <h1 className="text-[#D87D4A] uppercase tracking-[10px] text-[0.9rem]">
+                    New Product
+                  </h1>
+                )}
+                <h2 className="text-2xl font-bold mb-4 text-balance lg:text-[40px] mt-5">
+                  {product.name}
+                </h2>
+                <p className="text-[#000000] opacity-50 lg:text-[15px] mt-5">
+                  {product.description}
+                </p>
+                <Link to={`/${product.category}/${product.id}`}>
+                  See Product
+                </Link>
               </div>
             </div>
           );
         })}
       </div>
+      <Category />
+      <Info />
     </div>
   );
 }

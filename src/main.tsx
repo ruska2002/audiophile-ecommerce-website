@@ -5,6 +5,7 @@ import Layout from "./pages/Layout";
 import "./index.css";
 import HomePage from "./components/homePage/HomePage";
 import CategoryPage from "./components/CategoryPage/CategoryPage";
+import Product from "./components/CategoryPage/Product";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
         path: ":categoryName",
         element: <CategoryPage />,
       },
+      { path: ":product/:productId", element: <Product /> },
     ],
   },
 ]);

@@ -1,8 +1,7 @@
-import Desktop from "../../assets/home/desktop/image-hero.jpg";
-import Tablet from "../../assets/home/tablet/image-header.jpg";
-import Mobile from "../../assets/home/mobile/image-header.jpg";
+import Desktop from "../../../public/assets/home/desktop/image-hero.jpg";
+import Tablet from "../../../public/assets/home/tablet/image-header.jpg";
+import Mobile from "../../../public/assets/home/mobile/image-header.jpg";
 import { useMediaQuery } from "usehooks-ts";
-import TopBar from "./TopBar";
 
 export default function Header() {
   const Medium = useMediaQuery("(min-width: 600px)");
@@ -13,7 +12,8 @@ export default function Header() {
         src={`${Big ? Desktop : Medium ? Tablet : Mobile}`}
         className="w-full"
       />
-      <TopBar />
+
+      <hr className="absolute top-[80px] w-full h-[1px] opacity-20 bg-[white]" />
       <div className="absolute top-1/3 lg:left-[165px] text-[#ffffff] lg:w-[24.8rem] lg:text-left lg:items-start w-full flex flex-col justify-center text-center items-center">
         <p className="text-[14px] uppercase mb-4 tracking-[15px] opacity-80">
           NEW PRODUCT

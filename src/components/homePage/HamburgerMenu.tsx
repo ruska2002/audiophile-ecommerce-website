@@ -12,7 +12,7 @@ export default function HamburgerMenu() {
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? (
-          <Menu className="text-[#38384F]" />
+          <Menu className="text-[#D87D4A]" />
         ) : (
           <Menu className="text-[#ffffff]" />
         )}

@@ -1,11 +1,11 @@
 import NavBar from "./NavBar";
-import Facebook from "../../assets/shared/desktop/icon-facebook.svg";
-import Insta from "../../assets/shared/desktop/icon-instagram.svg";
-import Twitter from "../../assets/shared/desktop/icon-twitter.svg";
+import Facebook from "../../../public/assets/shared/desktop/icon-facebook.svg";
+import Insta from "../../../public/assets/shared/desktop/icon-instagram.svg";
+import Twitter from "../../../public/assets/shared/desktop/icon-twitter.svg";
 
 export default function Footer() {
   return (
-    <div className="bg-[#000000] h-[665px] lg:h-[365px] lg:mt-[12.5rem] mt-[6rem] font-bold text-[#ffffff] md:h-[400px] ">
+    <div className="bg-[#1f1f1f] h-[665px] lg:h-[365px] lg:mt-[12.5rem] mt-[6rem] font-bold text-[#ffffff] md:h-[400px] ">
       <div className="md:w-[689px]">
         <div className="mx-auto bg-[#D87D4A] w-[101px] h-[4px] md:ml-[19%]"></div>
         <div className="lg:flex lg:items-center lg:justify-between px-4 lg:mx-[17%] lg:ml-[34%] lg:gap-[525px]">
