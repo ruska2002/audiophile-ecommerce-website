@@ -1,15 +1,19 @@
-import Info from "./Info";
-import Category from "./Category";
-import Header from "./Header";
-import MiddlePart from "./MiddlePart";
+// import Info from "./Info";
+// import Category from "./Category";
+// import MiddlePart from "./MiddlePart";
+// import Header from "./Header";
+import CheckOut from "../CategoryPage/CheckOut";
+import TopBar from "./TopBar";
 export default function HomePage() {
   return (
     <div>
       {" "}
-      <Header />
-      <Category />
+      {/* <Header /> */}
+      <TopBar />
+      <CheckOut />
+      {/* <Category />
       <MiddlePart />
-      <Info />
+      <Info /> */}
     </div>
   );
 }

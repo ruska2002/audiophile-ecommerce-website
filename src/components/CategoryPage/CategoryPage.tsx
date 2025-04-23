@@ -50,11 +50,16 @@ export default function CategoryPage() {
                 <h2 className="text-2xl font-bold mb-4 text-balance lg:text-[40px] mt-5">
                   {product.name}
                 </h2>
-                <p className="text-[#000000] opacity-50 lg:text-[15px] mt-5">
+                <p
+                  className="text-[#000000] opacity-50 lg:text-[15px] mt-6
+                "
+                >
                   {product.description}
                 </p>
                 <Link to={`/${product.category}/${product.id}`}>
-                  See Product
+                  <button className="w-[10rem] h-[3rem] text-[#ffffff] bg-[#D87D4A] hover:bg-[#FBAF85] mt-8 mb-10">
+                    See Product
+                  </button>
                 </Link>
               </div>
             </div>

@@ -24,29 +24,31 @@ const categories = [
 
 export default function Category() {
   return (
-    <div className="flex flex-col md:flex-row gap-16 md:gap-6 lg:gap-8 md:h-[300px] md:justify-center md:items-center  lg:mt-20">
-      {categories.map((cat) => (
-        <div
-          key={cat.name}
-          className="relative h-[165px] mt-[50px] md:mt-0 bg-[#F1F1F1] rounded-lg text-black flex flex-col items-center md:w-[350px] lg:w-[350px] lg:h-[200px] lg:mt-10"
-        >
-          <img
-            src={cat.image}
-            alt={cat.name}
-            className="absolute top-[-45px] w-[130px]"
-          />
-          <h1 className="uppercase text-lg font-bold tracking-[1px] mt-[80px]">
-            {cat.name}
-          </h1>
-          <Link
-            to={cat.link}
-            className="flex items-center gap-2 mt-4 text-sm text-[#000000] hover:text-orange-500 transition"
+    <div className="w-full flex justify-center mt-6">
+      <div className="flex flex-col md:flex-row gap-16 md:gap-6 lg:gap-8 md:h-[300px] md:justify-center md:w-[689px] md:items-center justify-center items-center lg:mt-20 lg:w-[1110px]">
+        {categories.map((cat) => (
+          <div
+            key={cat.name}
+            className="relative h-[165px] mt-[50px] md:mt-0 bg-[#F1F1F1] rounded-lg text-black flex flex-col items-center w-[327px] md:w-[350px] lg:w-[350px] lg:h-[200px] lg:mt-10"
           >
-            <span>Shop</span>
-            <img src={arrowRight} alt="arrow icon" className="h-3" />
-          </Link>
-        </div>
-      ))}
+            <img
+              src={cat.image}
+              alt={cat.name}
+              className="absolute top-[-45px] w-[130px]"
+            />
+            <h1 className="uppercase text-lg font-bold tracking-[1px] mt-[80px]">
+              {cat.name}
+            </h1>
+            <Link
+              to={cat.link}
+              className="flex items-center gap-2 mt-4 text-sm text-[#000000] hover:text-orange-500 transition"
+            >
+              <span>Shop</span>
+              <img src={arrowRight} alt="arrow icon" className="h-3" />
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
