@@ -56,7 +56,7 @@ export default function CategoryPage() {
                 >
                   {product.description}
                 </p>
-                <Link to={`/${product.category}/${product.id}`}>
+                <Link to={`/${product.category}/${product.slug}`}>
                   <button className="w-[10rem] h-[3rem] text-[#ffffff] bg-[#D87D4A] hover:bg-[#FBAF85] mt-8 mb-10">
                     See Product
                   </button>

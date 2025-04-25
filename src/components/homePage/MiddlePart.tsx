@@ -9,7 +9,6 @@ import MainspeakerMini from "../../../public/assets/home/mobile/image-speaker-zx
 import MainspeakerMedium from "../../../public/assets/home/tablet/image-speaker-zx9.png";
 import PatternSircle from "../../../public/assets/home/desktop/pattern-circles.svg";
 import { useMediaQuery } from "usehooks-ts";
-import data from "../../../data.json";
 
 export default function MiddlePart() {
   const Medium = useMediaQuery("(min-width: 600px)");
