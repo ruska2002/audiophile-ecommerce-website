@@ -5,8 +5,10 @@ import { useMediaQuery } from "usehooks-ts";
 import { useState, useEffect } from "react";
 import Category from "../homePage/Category";
 import { ImageSet, ProductType } from "../../types/Types";
+import { useCart } from "../context/CartContext";
 
 export default function Product() {
+  const { addToCart } = useCart();
   const [numOfProducts, setNumOfProducts] = useState<number>(0);
 
   const isTablet = useMediaQuery("(min-width: 600px)");
@@ -19,8 +21,14 @@ export default function Product() {
 
   useEffect(() => {
     const foundProduct = data.find((item) => item.slug === productId);
-    setSelectedProduct(foundProduct);
+
+    if (foundProduct) {
+      setSelectedProduct({ ...foundProduct, quantity: 1 });
+    }
   }, [productId]);
+
+  // აქ მაქვს პრობლემა
+
   const ImgUrl = isDesktop
     ? selectedProduct?.image.desktop
     : isTablet
@@ -78,7 +86,17 @@ export default function Product() {
                   </button>
                 </div>
                 <div className="bg-[#D87D4A] hover:bg-[#FBAF85] w-[10rem] h-[3rem] text-[#ffffff] text-center flex justify-center items-center">
-                  <button className="uppercase">Add To Cart</button>
+                  <button
+                    className="uppercase"
+                    onClick={() => {
+                      if (selectedProduct && numOfProducts > 0) {
+                        addToCart(selectedProduct, numOfProducts);
+                        setNumOfProducts(0);
+                      }
+                    }}
+                  >
+                    Add To Cart
+                  </button>
                 </div>
               </div>
             </div>
@@ -153,7 +171,7 @@ export default function Product() {
                 <p className="font-bold text-[#000000] text-[24px] uppercase tracking-[2px] mt-10">
                   {items.name}
                 </p>
-                <Link to={""}>
+                <Link to={`/${items.category}/${items.slug}`}>
                   <button className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white p-2 mt-10 lg:w-[10rem] lg:h-[50px]">
                     View Product
                   </button>

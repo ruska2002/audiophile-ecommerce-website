@@ -21,18 +21,35 @@ interface Gallery {
   third: ImageSet;
 }
 
-interface ResponsiveMenuProps {
+export interface ResponsiveMenuProps {
   isOpen: boolean;
+  toggleBasket: () => void;
 }
-
 interface CategoryPageProps {
   categoryName?: string;
 }
+
+interface BasketItem {
+  id: number;
+  name: string;
+  quantity: number;
+}
+
+interface BasketState {
+  items: BasketItem[];
+}
+
+const initialState: BasketState = {
+  items: [],
+};
 
 export interface ProductType {
   id: number;
   slug: string;
   name: string;
+  price: number;
+  quantity?: number;
+
   image: {
     mobile: string;
     tablet: string;
@@ -45,7 +62,6 @@ export interface ProductType {
     desktop: string;
   };
   new: boolean;
-  price: number;
   description: string;
   features: string;
   includes: { quantity: number; item: string }[];
@@ -67,6 +83,7 @@ export interface ProductType {
     };
   };
   others: {
+    category: any;
     name: string;
     slug: string;
     image: {

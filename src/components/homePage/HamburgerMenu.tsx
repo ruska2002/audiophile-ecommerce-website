@@ -17,7 +17,12 @@ export default function HamburgerMenu() {
           <Menu className="text-[#ffffff]" />
         )}
       </button>
-      <ResponsiveMenu isOpen={isOpen} />
+      <ResponsiveMenu
+        isOpen={isOpen}
+        toggleBasket={function (): void {
+          throw new Error("Function not implemented.");
+        }}
+      />
     </div>
   );
 }

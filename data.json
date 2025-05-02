@@ -3,6 +3,11 @@
     "id": 1,
     "slug": "yx1-earphones",
     "name": "YX1 Wireless Earphones",
+    "middle": {
+      "mobile": "/assets/home/mobile/image-earphones-yx1.jpg",
+      "tablet": "/assets/home/tablet/image-earphones-yx1.jpg",
+      "desktop": "/assets/home/desktop/image-earphones-yx1.jpg"
+    },
     "image": {
       "mobile": "/assets/product-yx1-earphones/mobile/image-product.jpg",
       "tablet": "/assets/product-yx1-earphones/tablet/image-product.jpg",
@@ -97,6 +102,11 @@
       "desktop": "/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg"
     },
     "category": "headphones",
+    "home": {
+      "mobile": "/assets/home/mobile/image-header.jpg",
+      "tablet": "/assets/home/tablet/image-header.jpg",
+      "desktop": "/assets/home/desktop/image-hero.jpg"
+    },
     "categoryImage": {
       "mobile": "/assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg",
       "tablet": "/assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg",
@@ -352,6 +362,12 @@
       "tablet": "/assets/product-zx7-speaker/tablet/image-product.jpg",
       "desktop": "/assets/product-zx7-speaker/desktop/image-product.jpg"
     },
+    "middle": {
+      "mobile": "/assets/home/mobile/image-speaker-zx7.jpg",
+      "tablet": "/assets/home/tablet/image-earphones-zx7.jpg",
+      "desktop": "/assets/home/desktop/image-earphones-zx7.jpg"
+    },
+
     "category": "speakers",
     "categoryImage": {
       "mobile": "/assets/product-zx7-speaker/mobile/image-category-page-preview.jpg",
@@ -435,6 +451,11 @@
     "id": 6,
     "slug": "zx9-speaker",
     "name": "ZX9 Speaker",
+    "middle": {
+      "mobile": "/assets/home/mobile/image-speaker-zx9.png",
+      "tablet": "/assets/home/tablet/image-speaker-zx9.png",
+      "desktop": "/assets/home/desktop/image-speaker-zx9.png"
+    },
     "image": {
       "mobile": "/assets/product-zx9-speaker/mobile/image-product.jpg",
       "tablet": "/assets/product-zx9-speaker/tablet/image-product.jpg",
