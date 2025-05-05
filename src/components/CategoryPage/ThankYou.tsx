@@ -1,4 +1,4 @@
-import OrderConfirm from "../../../public/assets/checkout/icon-order-confirmation.svg";
+import OrderConfirm from "/public/assets/checkout/icon-order-confirmation.svg";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
 

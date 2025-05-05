@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import earphones from "../../../public/assets/shared/desktop/image-category-thumbnail-earphones.png";
-import headphones from "../../../public/assets/shared/desktop/image-category-thumbnail-headphones.png";
-import speakers from "../../../public/assets/shared/desktop/image-category-thumbnail-speakers.png";
-import arrowRight from "../../../public/assets/shared/desktop/icon-arrow-right.svg";
+import earphones from "/public/assets/shared/desktop/image-category-thumbnail-earphones.png";
+import headphones from "/public/assets/shared/desktop/image-category-thumbnail-headphones.png";
+import speakers from "/public/assets/shared/desktop/image-category-thumbnail-speakers.png";
+import arrowRight from "/public/assets/shared/desktop/icon-arrow-right.svg";
 
 const categories = [
   {
@@ -24,12 +24,12 @@ const categories = [
 
 export default function Category() {
   return (
-    <div className="w-full flex justify-center mt-6">
-      <div className="flex flex-col md:flex-row gap-16 md:gap-6 lg:gap-8 md:h-[300px] md:justify-center md:w-[689px] md:items-center justify-center items-center lg:mt-20 lg:w-[1110px]">
+    <div className="w-full flex justify-center mt-6 overflow-x-hidden">
+      <div className="flex flex-col md:flex-row gap-16 md:gap-6 lg:gap-8 md:h-[300px] md:justify-center md:w-full md:items-center justify-center items-center lg:mt-20 lg:w-full flex-wrap">
         {categories.map((cat) => (
           <div
             key={cat.name}
-            className="relative h-[165px] mt-[50px] md:mt-0 bg-[#F1F1F1] rounded-lg text-black flex flex-col items-center w-[327px] md:w-[350px] lg:w-[350px] lg:h-[200px] lg:mt-10"
+            className="relative h-[165px] mt-[50px] md:mt-0 bg-[#F1F1F1] rounded-lg text-black flex flex-col items-center w-[327px] sm:w-[327px] md:w-[350px] lg:w-[350px] lg:h-[200px] lg:mt-10"
           >
             <img
               src={cat.image}

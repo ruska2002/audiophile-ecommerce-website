@@ -4,8 +4,8 @@ import Info from "../homePage/Info";
 import { useMediaQuery } from "usehooks-ts";
 import { useState, useEffect } from "react";
 import Category from "../homePage/Category";
-import { ImageSet, ProductType } from "../../types/Types";
 import { useCart } from "../context/CartContext";
+// import { ProductType } from "../../../types";
 
 export default function Product() {
   const { addToCart } = useCart();

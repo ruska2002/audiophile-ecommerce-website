@@ -1,6 +1,6 @@
-import HomeImageDesktop from "../../../public/assets/shared/desktop/image-best-gear.jpg";
-import HomeImageTablet from "../../../public/assets/shared/tablet/image-best-gear.jpg";
-import HomeImageMobile from "../../../public/assets/shared/mobile/image-best-gear.jpg";
+import HomeImageDesktop from "/public/assets/shared/desktop/image-best-gear.jpg";
+import HomeImageTablet from "/public/assets/shared/tablet/image-best-gear.jpg";
+import HomeImageMobile from "/public/assets/shared/mobile/image-best-gear.jpg";
 import { useMediaQuery } from "usehooks-ts";
 
 export default function Info() {

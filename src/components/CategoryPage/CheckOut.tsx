@@ -15,6 +15,8 @@ type Inputs = {
   city: string;
   country: string;
   payment: string;
+  eMoneyNumber: number;
+  eMoneyPin: number;
 };
 
 const schema = yup.object().shape({
@@ -33,6 +35,14 @@ const schema = yup.object().shape({
     .notRequired(),
   phone: yup.number().required("Phone input must not be empty"),
   payment: yup.string().required("Please select a payment method"),
+  eMoneyNumber: yup
+    .string()
+    .required("e-Money Number is required")
+    .matches(/^\d+$/, "e-Money Number must be a valid number"),
+  eMoneyPin: yup
+    .string()
+    .required("e-Money PIN is required")
+    .matches(/^\d+$/, "e-Money PIN must be a valid number"),
 });
 export default function CheckOut() {
   const {
@@ -44,7 +54,6 @@ export default function CheckOut() {
     resolver: yupResolver(schema) as unknown as Resolver<Inputs, unknown>,
   });
 
-  // const [selected, setSelected] = useState("e-money");
   const { cartItems, total } = useCart();
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
@@ -232,17 +241,29 @@ export default function CheckOut() {
                     <p className="text-black font-bold mb-2">e-Money Number</p>
                     <input
                       type="number"
+                      {...register("eMoneyNumber")}
                       placeholder="238521993"
                       className="border-2 border-[#CFCFCF] rounded-lg w-full h-[56px] pl-4 text-black"
                     />
+                    {errors.eMoneyNumber && (
+                      <p className="text-red-500 text-[10px]">
+                        {errors.eMoneyNumber.message}
+                      </p>
+                    )}
                   </div>
                   <div className="flex-1">
                     <p className="text-black font-bold mb-2">e-Money PIN</p>
                     <input
                       type="number"
+                      {...register("eMoneyPin")}
                       placeholder="6891"
                       className="border-2 border-[#CFCFCF] rounded-lg w-full h-[56px] pl-4 text-black"
                     />
+                    {errors.eMoneyPin && (
+                      <p className="text-red-500 text-[10px]">
+                        {errors.eMoneyPin.message}
+                      </p>
+                    )}
                   </div>
                 </div>
               )}

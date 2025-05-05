@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Category from "./Category";
-import { ResponsiveMenuProps } from "../../types/Types";
+import { ResponsiveMenuProps } from "../../../types";
 
 export default function ResponsiveMenu({ isOpen }: ResponsiveMenuProps) {
   return (

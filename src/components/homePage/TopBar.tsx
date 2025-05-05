@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import NavBar from "./NavBar";
-import iconCart from "../../../public/assets/shared/desktop/icon-cart.svg";
+import iconCart from "/public/assets/shared/desktop/icon-cart.svg";
 import HamburgerMenu from "./HamburgerMenu";
 import Cart from "./Cart";
 import { Link, useLocation } from "react-router-dom";
