@@ -2,7 +2,11 @@ import OrderConfirm from "../../../public/assets/checkout/icon-order-confirmatio
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
-export default function ThankYou() {
+type ThankYouProps = {
+  onClose: () => void;
+};
+
+export default function ThankYou({ onClose }: ThankYouProps) {
   const { cartItems, total } = useCart();
 
   return (
@@ -43,7 +47,10 @@ export default function ThankYou() {
           <p className="text-[#000000]">${total + 50}</p>
         </div>
         <Link to="/" className="mt-4 block">
-          <button className="uppercase text-white bg-[#D87D4A] w-full h-[3rem] rounded-md">
+          <button
+            onClick={onClose}
+            className="uppercase text-white bg-[#D87D4A] w-full h-[3rem] rounded-md"
+          >
             Back to Home
           </button>
         </Link>

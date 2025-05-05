@@ -16,7 +16,6 @@ export default function Cart({ onClose }: CartProps) {
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
-  //როცა ვარეფრეშებ არ მინდა რომ იშლებოდეს მონაცემი
 
   return (
     <AnimatePresence>

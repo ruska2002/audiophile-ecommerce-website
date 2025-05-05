@@ -27,8 +27,6 @@ export default function Product() {
     }
   }, [productId]);
 
-  // აქ მაქვს პრობლემა
-
   const ImgUrl = isDesktop
     ? selectedProduct?.image.desktop
     : isTablet

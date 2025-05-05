@@ -2,21 +2,22 @@ import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import ThankYou from "./ThankYou";
 import { useNavigate } from "react-router-dom";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler, Resolver } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-type inputs = {
+type Inputs = {
   name: string;
   email: string;
   phone: number;
   address: string;
-  zipCode: number;
+  zipCode?: number | undefined;
   city: string;
   country: string;
+  payment: string;
 };
 
-const schema = yup.object({
+const schema = yup.object().shape({
   name: yup.string().required("Name input must not be empty"),
   email: yup
     .string()
@@ -25,30 +26,34 @@ const schema = yup.object({
   country: yup.string().required("Country input must not be empty"),
   city: yup.string().required("City input must not be empty"),
   address: yup.string().required("Address input must not be empty"),
-  zipCode: yup.number(),
+  zipCode: yup
+    .number()
+    .transform((value) => (isNaN(value) ? undefined : value))
+    .optional()
+    .notRequired(),
   phone: yup.number().required("Phone input must not be empty"),
+  payment: yup.string().required("Please select a payment method"),
 });
 export default function CheckOut() {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
-  } = useForm<inputs>({ resolver: yupResolver(schema) });
+  } = useForm<Inputs>({
+    resolver: yupResolver(schema) as unknown as Resolver<Inputs, unknown>,
+  });
 
-  const [selected, setSelected] = useState("e-money");
+  // const [selected, setSelected] = useState("e-money");
   const { cartItems, total } = useCart();
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
 
-  const handleContinue = (e: React.FormEvent) => {
-    e.preventDefault();
-    setShowModal(true);
-  };
   const handleCloseModal = () => {
     setShowModal(false);
     navigate("/");
   };
-  const onSubmit: SubmitHandler<inputs> = (data) => {
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
     localStorage.setItem("checkoutData", JSON.stringify(data));
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     localStorage.setItem("total", JSON.stringify(total + 50));
@@ -190,51 +195,45 @@ export default function CheckOut() {
                 <p className="w-40">Payment Method</p>
                 <div className="flex flex-col gap-4">
                   <label
-                    className={`flex items-center gap-4 p-4 border rounded-md cursor-pointer md:w-[309px] lg:w-[309px] w-[150px]${
-                      selected === "e-Money"
-                        ? "border-orange-500"
-                        : "border-gray-300"
-                    }`}
+                    className={`flex items-center gap-4 p-4 border rounded-md cursor-pointer md:w-[309px] lg:w-[309px] w-[150px]`}
                   >
                     <input
                       type="radio"
-                      name="payment"
                       value="e-Money"
-                      checked={selected === "e-Money"}
-                      onChange={() => setSelected("e-Money")}
+                      {...register("payment")}
                       className="accent-orange-500"
                     />
                     <span className="font-semibold">e-Money</span>
                   </label>
 
                   <label
-                    className={`flex items-center gap-4 p-4 border rounded-md cursor-pointer md:w-[309px] lg:w-[309px] w-[150px]${
-                      selected === "Cash on Delivery"
-                        ? "border-orange-500"
-                        : "border-gray-300"
-                    }`}
+                    className={`flex items-center gap-4 p-4 border rounded-md cursor-pointer md:w-[309px] lg:w-[309px] w-[150px]`}
                   >
                     <input
                       type="radio"
-                      name="payment"
                       value="Cash on Delivery"
-                      checked={selected === "Cash on Delivery"}
-                      onChange={() => setSelected("Cash on Delivery")}
+                      {...register("payment")}
                       className="accent-orange-500"
                     />
                     <span className="font-semibold">Cash on Delivery</span>
                   </label>
+
+                  {errors.payment && (
+                    <p className="text-red-500 text-[10px]">
+                      {errors.payment.message}
+                    </p>
+                  )}
                 </div>
               </div>
 
-              {selected === "e-Money" && (
+              {watch("payment") === "e-Money" && (
                 <div className="flex flex-col lg:flex-row gap-6 mt-4">
                   <div className="flex-1">
                     <p className="text-black font-bold mb-2">e-Money Number</p>
                     <input
                       type="number"
                       placeholder="238521993"
-                      className="border-2 border-[#CFCFCF] rounded-lg w-full h-[56px] pl-4 text-black "
+                      className="border-2 border-[#CFCFCF] rounded-lg w-full h-[56px] pl-4 text-black"
                     />
                   </div>
                   <div className="flex-1">

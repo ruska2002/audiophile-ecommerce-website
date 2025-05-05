@@ -2,6 +2,7 @@ import NavBar from "./NavBar";
 import Facebook from "../../../public/assets/shared/desktop/icon-facebook.svg";
 import Insta from "../../../public/assets/shared/desktop/icon-instagram.svg";
 import Twitter from "../../../public/assets/shared/desktop/icon-twitter.svg";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -28,15 +29,22 @@ export default function Footer() {
             Copyright 2021. All Rights Reserved
           </p>
           <div className="flex gap-4 justify-center md:justify-end mt-6 md:mt-0 lg:mr-[-71%]">
-            <button>
-              <img src={Facebook} alt="facebook icon" />
-            </button>
-            <button>
-              <img src={Twitter} alt="twitter icon" />
-            </button>
-            <button>
-              <img src={Insta} alt="instagram icon" />
-            </button>
+            <Link to="https://www.facebook.com/">
+              <button>
+                <img src={Facebook} alt="facebook icon" />
+              </button>
+            </Link>
+            <Link to="https://x.com/">
+              <button>
+                <img src={Twitter} alt="twitter icon" />
+              </button>
+            </Link>
+            <Link to="https://www.instagram.com/">
+              {" "}
+              <button>
+                <img src={Insta} alt="instagram icon" />
+              </button>
+            </Link>
           </div>
         </div>
       </div>

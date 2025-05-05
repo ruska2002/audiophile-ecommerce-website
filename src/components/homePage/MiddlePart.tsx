@@ -12,8 +12,12 @@ export default function MiddlePart() {
 
   if (!zx9 || !zx7 || !yx1) return null;
 
-  const getImage = (middle: any) =>
-    Big ? middle.desktop : Medium ? middle.tablet : middle.mobile;
+  const getImage = (
+    middle: { mobile: string; tablet: string; desktop: string } | undefined
+  ) => {
+    if (!middle) return "";
+    return Big ? middle.desktop : Medium ? middle.tablet : middle.mobile;
+  };
 
   return (
     <div className="flex flex-col items-center w-full">
@@ -26,7 +30,7 @@ export default function MiddlePart() {
           />
           <div className="relative z-20 mb-10 lg:mb-[-47px] lg:ml-10">
             <img
-              src={getImage(zx9.image)}
+              src={getImage(zx9.middle)}
               alt="ZX9 Speaker"
               className="w-[150px] h-[180px] md:w-[200px] md:h-[250px] lg:w-[310px] lg:h-[403px]"
             />
@@ -52,7 +56,7 @@ export default function MiddlePart() {
       <div
         className="mt-6 w-full max-w-[327px] md:max-w-[689px] lg:max-w-[1110px] h-[320px] rounded-lg bg-cover bg-center flex items-center pl-6"
         style={{
-          backgroundImage: `url(${getImage(zx7.categoryImage)})`,
+          backgroundImage: `url(${getImage(zx7.middle)})`,
         }}
       >
         <div className="lg:ml-14  md:ml-[5%]">
@@ -70,7 +74,7 @@ export default function MiddlePart() {
       <div className="lg:flex gap-6 md:flex">
         <div className="md:max-w-[689px]">
           <img
-            src={getImage(yx1.categoryImage)}
+            src={getImage(yx1.middle)}
             alt="earphones"
             className="w-[327px] h-[150px] lg:w-[542px] lg:h-[303px] md:w-[330px] md:h-[237px] rounded-lg mt-6"
           />

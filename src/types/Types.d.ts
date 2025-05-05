@@ -55,16 +55,23 @@ export interface ProductType {
     tablet: string;
     desktop: string;
   };
+
   category: string;
   categoryImage: {
     mobile: string;
     tablet: string;
     desktop: string;
   };
+
   new: boolean;
   description: string;
   features: string;
-  includes: { quantity: number; item: string }[];
+
+  includes: {
+    quantity: number;
+    item: string;
+  }[];
+
   gallery: {
     first: {
       mobile: string;
@@ -82,14 +89,18 @@ export interface ProductType {
       desktop: string;
     };
   };
+
   others: {
-    category: any;
-    name: string;
+    category: string;
     slug: string;
+    name: string;
     image: {
       mobile: string;
       tablet: string;
       desktop: string;
     };
   }[];
+
+  home?: string;
+  middle?: string;
 }
