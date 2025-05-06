@@ -34,7 +34,7 @@ export default function Cart({ onClose }: CartProps) {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="fixed top-[15%] right-[2%] z-50 w-[327px] bg-white shadow-lg p-6 rounded-md "
+          className="fixed top-[15%] right-[2%] z-50 w-[327px] bg-white shadow-lg p-6 rounded-md"
         >
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-bold">Cart ({number})</h2>
@@ -47,7 +47,10 @@ export default function Cart({ onClose }: CartProps) {
           </div>
 
           {cartItems.map((item) => (
-            <div key={item.id} className="flex items-center gap-4 mb-4">
+            <div
+              key={item.id}
+              className="flex items-center gap-4 mb-4 font-manrope"
+            >
               <img
                 src={item.image.mobile}
                 alt={item.name}

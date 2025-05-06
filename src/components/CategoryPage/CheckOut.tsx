@@ -69,7 +69,7 @@ export default function CheckOut() {
     setShowModal(true);
   };
   return (
-    <div className="bg-[#F1F1F1] py-20 flex justify-center mt-10  md:items-center md:justify-center">
+    <div className="bg-[#F1F1F1] py-20 flex justify-center mt-10  md:items-center md:justify-center font-manrope">
       <form
         className="flex flex-col items-center justify-center lg:flex-row gap-8 w-full max-w-[1200px] px-4"
         onSubmit={handleSubmit(onSubmit)}

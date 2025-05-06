@@ -5,8 +5,7 @@ import Header from "./Header";
 
 export default function HomePage() {
   return (
-    <div>
-      {" "}
+    <div className="font-manrope">
       <Header />
       <Category />
       <MiddlePart />

@@ -5,7 +5,7 @@ import { useMediaQuery } from "usehooks-ts";
 import { useState, useEffect } from "react";
 import Category from "../homePage/Category";
 import { useCart } from "../context/CartContext";
-// import { ProductType } from "../../../types";
+import { ImageSet, ProductType } from "../../../types";
 
 export default function Product() {
   const { addToCart } = useCart();
@@ -41,7 +41,7 @@ export default function Product() {
 
   return (
     <>
-      <div className="pt-[80px] flex flex-col items-center mt-10">
+      <div className="pt-[80px] flex flex-col items-center mt-10 font-manrope">
         <div className="w-full max-w-[1200px] px-4">
           <Link to={`/${selectedProduct?.category}`}>
             <p className="text-black mb-6 opacity-50 ">Go Back</p>

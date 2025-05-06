@@ -10,7 +10,7 @@ export default function ThankYou({ onClose }: ThankYouProps) {
   const { cartItems, total } = useCart();
 
   return (
-    <div className="bg-white w-[327px] flex flex-col items-center p-6 rounded-lg">
+    <div className="bg-white w-[327px] flex flex-col items-center p-6 rounded-lg font-manrope">
       <img src={OrderConfirm} className="mb-4" />
       <p className="uppercase text-lg font-semibold mb-2 text-center">
         Thank You FOR YOUR ORDER

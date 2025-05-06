@@ -20,9 +20,9 @@ export default function MiddlePart() {
   };
 
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex flex-col items-center max-w-full">
       <div className="flex justify-center w-full">
-        <div className="relative bg-[#D87D4A] w-full max-w-[327px] md:max-w-[689px] lg:max-w-[1110px] h-auto rounded-lg overflow-hidden flex flex-col lg:flex-row items-center justify-between text-white px-6 mt-6 py-10">
+        <div className="relative bg-[#D87D4A] w-full max-w-[327px] md:max-w-[689px] lg:max-w-[1100px] h-auto rounded-lg overflow-hidden flex flex-col lg:flex-row items-center justify-between text-white mt-6 px-6 py-10">
           <img
             src={PatternSircle}
             alt="Circle"

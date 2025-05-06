@@ -15,7 +15,7 @@ export default function CategoryPage() {
   );
 
   return (
-    <div>
+    <div className="font-manrope">
       <div className="bg-[#1f1f1f] text-white">
         <div className="py-[6.5rem]">
           <h1 className="text-3xl text-center uppercase">{categoryName}</h1>

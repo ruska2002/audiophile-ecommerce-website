@@ -19,7 +19,7 @@ export default function TopBar() {
   };
 
   return (
-    <div>
+    <div className="font-manrope">
       <div className="absolute top-0 left-0 w-full z-10 flex items-center justify-between px-10 h-[80px] bg-[#1f1f1f]">
         <div className="flex md:gap-4 sm:justify-around">
           <HamburgerMenu />
