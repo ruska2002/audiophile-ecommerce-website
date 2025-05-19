@@ -1,4 +1,4 @@
-import PatternSircle from "/public/assets/home/desktop/pattern-circles.svg";
+import PatternSircle from "/assets/home/desktop/pattern-circles.svg";
 import { useMediaQuery } from "usehooks-ts";
 import data from "../../../data.json";
 import { Link } from "react-router-dom";

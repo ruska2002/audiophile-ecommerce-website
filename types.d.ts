@@ -64,6 +64,7 @@ export interface ProductType {
   };
 
   new: boolean;
+  price: number;
   description: string;
   features: string;
 
@@ -91,16 +92,18 @@ export interface ProductType {
   };
 
   others: {
-    category: string;
     slug: string;
     name: string;
+    category?: string;
     image: {
       mobile: string;
       tablet: string;
       desktop: string;
     };
   }[];
-
-  home?: string;
-  middle?: string;
+  middle?: {
+    mobile: string;
+    tablet: string;
+    desktop: string;
+  };
 }

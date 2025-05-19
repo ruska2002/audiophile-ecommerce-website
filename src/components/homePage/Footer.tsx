@@ -1,7 +1,7 @@
 import NavBar from "./NavBar";
-import Facebook from "/public/assets/shared/desktop/icon-facebook.svg";
-import Insta from "/public/assets/shared/desktop/icon-instagram.svg";
-import Twitter from "/public/assets/shared/desktop/icon-twitter.svg";
+import Facebook from "/assets/shared/desktop/icon-facebook.svg";
+import Insta from "/assets/shared/desktop/icon-instagram.svg";
+import Twitter from "/assets/shared/desktop/icon-twitter.svg";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
